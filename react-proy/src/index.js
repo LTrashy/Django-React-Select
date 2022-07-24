@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //components
 import NavBar from "./components/NavBar";
@@ -10,13 +10,15 @@ import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./index.css";
+import AllItem from "./components/Init/allItem";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <NavBar />
     <div className="container my-4">
       <Routes>
+        <Route exact path="/" element={<AllItem />} />
         {/* <Route exact path="/" element={<CompanyList />} />
         <Route path="/companyForm" element={<CompanyForm />} />
         <Route path="/updateCompany/:id" element={<CompanyForm />} /> */}

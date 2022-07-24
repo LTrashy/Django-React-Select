@@ -83,7 +83,9 @@ class CiudadView(View):
  
     def post(self, request):
         jd = json.loads(request.body)
-        Ciudad.objects.create(name = jd['name'],departamento = jd['departamento'])
+        departamento_id=jd['departemento']
+        departamento = Departamento.objects.get(id=departamento_id)
+        Ciudad.objects.create(name = jd['name'],departamento = departamento)
         datos={'message':'Success'}
         return JsonResponse(datos)
  
@@ -134,7 +136,10 @@ class LocalidadView(View):
  
     def post(self, request):
         jd = json.loads(request.body)
-        Localidad.objects.create(name = jd['name'],ciudad = jd['ciudad'])
+        ciudad_id = jd['ciudad']
+        ciudad = Ciudad.objects.get(id=ciudad_id)
+        # print(ciudad)
+        Localidad.objects.create(name = jd['name'],ciudad = ciudad)
         datos={'message':'Success'}
         return JsonResponse(datos)
  
