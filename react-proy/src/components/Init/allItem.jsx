@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import * as CiudadServer from "../Ciudad/ciudadServer";
 import * as LocalidadServer from "../Localidad/localidadServer";
 import * as DepartamentoServer from "../Departamento/departamentoServer";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -112,6 +110,7 @@ const AllItem = () => {
   const [selectedOptionLoc, setSelectedOptionLoc] = useState([]);
 
   console.log(selectedOptionDep);
+  console.log(selectedOptionCiu);
   return (
     <div className="container">
       <div className="card-group col-md-8 mb-6 mx-auto text-center">
@@ -121,6 +120,7 @@ const AllItem = () => {
             value={selectedOptionDep}
             onChange={(e) => handleDepChange(e.target.value)}
           >
+            <option>Seleccione Departamento ----</option>
             {departamentos.map((departamento) => (
               <option key={departamento.id} value={departamento.name}>
                 {departamento.name}
@@ -134,6 +134,7 @@ const AllItem = () => {
             value={selectedOptionCiu}
             onChange={(e) => handleCiuChange(e.target.value)}
           >
+            <option>Seleccione Ciudad ----</option>
             {ciudadesAct.map((ciudad) => (
               <option key={ciudad.id} value={ciudad.name}>
                 {ciudad.name}
@@ -147,6 +148,7 @@ const AllItem = () => {
             value={selectedOptionLoc}
             onChange={(e) => setSelectedOptionLoc(e.target.value)}
           >
+            <option>Seleccione Localidad ----</option>
             {localidadesAct.map((localidad) => (
               <option key={localidad.id} value={localidad.name}>
                 {localidad.name}
