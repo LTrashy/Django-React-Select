@@ -119,6 +119,7 @@ const AllItem = () => {
           <select
             value={selectedOptionDep}
             onChange={(e) => handleDepChange(e.target.value)}
+            class="form-select" aria-label="Default select example"
           >
             <option>Seleccione Departamento ----</option>
             {departamentos.map((departamento) => (
@@ -133,6 +134,7 @@ const AllItem = () => {
           <select
             value={selectedOptionCiu}
             onChange={(e) => handleCiuChange(e.target.value)}
+            class="form-select" aria-label="Default select example"
           >
             <option>Seleccione Ciudad ----</option>
             {ciudadesAct.map((ciudad) => (
@@ -147,6 +149,7 @@ const AllItem = () => {
           <select
             value={selectedOptionLoc}
             onChange={(e) => setSelectedOptionLoc(e.target.value)}
+            class="form-select" aria-label="Default select example"
           >
             <option>Seleccione Localidad ----</option>
             {localidadesAct.map((localidad) => (
